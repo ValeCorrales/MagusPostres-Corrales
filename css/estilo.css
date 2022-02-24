@@ -1,0 +1,299 @@
+
+* {
+    
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.headerNav{
+
+    position: sticky;
+    top: 0;
+    padding: 20px;
+}
+
+.navBackground {
+
+    background-color: pink;
+}
+
+/* .navItem {
+
+    display: inline-block; 
+
+} */
+
+li {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.navItemBackground {
+
+ 
+    font-size: 25px;
+
+}
+
+.navItemColor {
+    color: white;
+    font-size: 25px;
+}
+
+
+
+a {
+    color: pink;
+    font-size: 30px;
+    text-decoration: none;
+
+}
+
+a:hover {
+
+    color:hotpink;
+
+}
+
+
+.mainLogo {
+    
+    max-width: 800px;  
+    width: 100%;
+    margin: 5px;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+.pIndex {
+    text-align: center;
+}
+
+
+.mainImg {
+
+    padding: 20px 90px;
+    margin: 20px;
+    border: 2px solid gray;
+}
+
+.imgIndex {
+    width: 100%;
+}
+
+h3 {
+    padding: 5px;
+    font-size: 15px;
+}
+
+.imgProd {
+
+    width: 45%;
+}
+
+.productos {
+    color: rgb(247, 83, 192);
+}
+
+.formularioContacto{
+    text-align: left;
+    font-size: 20px;
+
+}
+
+.boton {
+    font-size: 20px;
+    
+}
+
+.locales {
+    text-decoration: underline;
+}
+
+/* Entrega GRIDS */
+
+.headerLogo {
+
+    width: 70px;  
+    padding: 20px;
+    margin-top: 20px; 
+    margin-left: 30px;
+    
+} 
+
+header {
+    display: flex;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer h3 {
+    padding: 20px;
+}
+
+.subtituloIndex {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    
+}
+
+.imgDelivery {
+    width: 200px;
+}
+
+.producto1 {
+    display: flex;
+}
+
+.producto2 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.producto3 {
+    display: flex;
+}
+
+.tabla {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 1024px) {
+    .contenedorPadre {
+        display: grid;
+        grid-template-areas: 
+        "header"
+        "row1"
+        "row2"
+        "row3"
+        "row4"
+        "footer";
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+    }
+    .imgIndex {
+        width: 48%;
+    }
+
+    .mainImg {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+header {
+    grid-area: header;
+}
+
+.row1 {
+    grid-area: row1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row2 {
+    grid-area: row2;
+}
+
+.row3 {
+    grid-area: row3;
+}
+
+.row4 {
+    grid-area: row4;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* Clase 8: animaciones, transformaciones y transiciones */
+
+/* GRAD */
+
+footer {
+    background-image: linear-gradient(to right, rgb(223, 88, 223), pink);
+}
+
+/* TRANSFORM */
+
+/* .translate{ */
+    /* transform: translate(-100px, 100px) *//* acepta dos valores: el primero eje x y el 2 eje de las y */
+    /* transform: rotate(180deg) valores positivos y negativos*/
+    /* transform: scale(2,2); */
+    /* transform: skew(10deg,20deg); */
+/* } */
+
+/* TRANSICIONES: transition 
+HOVER: cuando paso el mousse por un elemento
+FOCUS: cuando selecciono el input de un formulario */
+
+/* .transition {
+    text-align: left;
+}
+
+.transition:hover{
+    text-align: left;
+
+} */
+
+input{
+    width: 200px;
+    height: 40px;
+    border-radius: 100px;
+    transition: all 2s;
+}
+
+input:focus{
+    width: 300px;
+    height: 50px;
+    font-size: 30px;
+}
+
+@keyframes animacionImg {
+    0% { transform: translateX(0px);
+    }
+    25% { transform: translateX(-80px);
+    }
+    50%{ transform: translatex(80px);
+    }
+    100%{transform: translateX(0px);
+    }
+}
+
+.animacion {
+    animation-name: animacionImg;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 5s;
+}
+
+@keyframes aparecerDesaparecer {
+    0% {opacity: 0;}
+    100% {opacity: 1;
+    transform: scale(2,2);}
+    
+}
+
+.row3 h1 {
+    animation-name: aparecerDesaparecer;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-duration: 1s;
+}
